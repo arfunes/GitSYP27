@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-17-2016 04:54:24 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="m.pojos.Dificultades" table="dificultades" schema="public" optimistic-lock="version">
+        <id name="iddificultad" type="int">
+            <column name="iddificultad" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="persona" class="m.pojos.Persona" fetch="select">
+            <column name="idpersona" />
+        </many-to-one>
+        <property name="enproduccion" type="string">
+            <column name="enproduccion" length="254" not-null="true" />
+        </property>
+        <property name="enventa" type="string">
+            <column name="enventa" length="254" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

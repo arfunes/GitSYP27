@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-17-2016 04:54:24 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="m.pojos.Produccion" table="produccion" schema="public" optimistic-lock="version">
+        <id name="idproduccion" type="int">
+            <column name="idproduccion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="producto" class="m.pojos.Producto" fetch="select">
+            <column name="idproducto" />
+        </many-to-one>
+        <property name="preciodeventapormayor" type="double">
+            <column name="preciodeventapormayor" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="preciodeventapormenor" type="double">
+            <column name="preciodeventapormenor" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="unidaddemedida" type="string">
+            <column name="unidaddemedida" length="30" not-null="true" />
+        </property>
+        <property name="tamanodeproduccion" type="int">
+            <column name="tamanodeproduccion" not-null="true" />
+        </property>
+        <set name="personas" table="realiza" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idproduccion" not-null="true" />
+            </key>
+            <many-to-many entity-name="m.pojos.Persona">
+                <column name="idpersona" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

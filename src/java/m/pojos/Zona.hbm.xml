@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-17-2016 04:54:24 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="m.pojos.Zona" table="zona" schema="public" optimistic-lock="version">
+        <id name="idzona" type="int">
+            <column name="idzona" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombrezona" type="string">
+            <column name="nombrezona" length="254" not-null="true" />
+        </property>
+        <set name="personas" table="persona" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idzona" />
+            </key>
+            <one-to-many class="m.pojos.Persona" />
+        </set>
+    </class>
+</hibernate-mapping>
