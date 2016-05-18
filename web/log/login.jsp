@@ -21,7 +21,7 @@
           <div class="a-header mdl-layout__header mdl-layout__header--waterfall">
             <div class="mdl-layout__header-row">
                 <span class="a-title mdl-layout-title">
-                  <img class="a-logo-image" src="C:\Users\Oscar\Downloads\logosuchi.jpg">
+                  <img class="a-logo-image" src="../image/logo.jpg">
                 </span>
           
                 <div class="a-header-spacer mdl-layout-spacer"></div>
@@ -51,14 +51,15 @@
                         <td><input type="password" name="f_contra" value="" /></td>
                     </tr>
                     <tr>
-                        <td class="botn"><input type="submit" value="Ingresar" /></td>
+                        <td class="botn">
+                            <input type="submit" value="Ingresar" />
+                        </td>
                         <%--<td class="botn"><input type="submit" value="Olvide Contraseña" /></td>--%>
                     </tr>
                 </tbody>
             </table>
 
-        </form>
-                        <c:forEach/>
+        </form> 
       </div>    
     </body>
 </html>

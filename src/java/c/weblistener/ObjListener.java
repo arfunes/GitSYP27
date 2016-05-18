@@ -23,7 +23,7 @@ public class ObjListener implements ServletContextListener {
         List<Usuario> listaUsuarios = UsuarioServicio.getUsuario();
         
         //dejando la lista de usuarios en la nube
-        sce.getServletContext().setAttribute("usuariosbd", listaUsuarios);
+        sce.getServletContext().setAttribute("usuarios", listaUsuarios);
     }
 
     @Override
