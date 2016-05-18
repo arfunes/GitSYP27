@@ -5,10 +5,12 @@
  */
 package c.weblistener;
 
+import c.servicios.PersonaServicio;
 import c.servicios.UsuarioServicio;
 import java.util.List;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import m.pojos.Persona;
 import m.pojos.Usuario;
 
 /**
@@ -16,14 +18,14 @@ import m.pojos.Usuario;
  *
  * @author Ar Montalvo
  */
-public class ObjListener implements ServletContextListener {
+public class PersonaListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        List<Usuario> listaUsuarios = UsuarioServicio.getUsuario();
+        List<Persona> lista = PersonaServicio.getPersona();
         
         //dejando la lista de usuarios en la nube
-        sce.getServletContext().setAttribute("usuarios", listaUsuarios);
+        sce.getServletContext().setAttribute("personas", lista);
     }
 
     @Override

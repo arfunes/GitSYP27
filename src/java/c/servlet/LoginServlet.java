@@ -5,13 +5,16 @@
  */
 package c.servlet;
 
+import c.servicios.UsuarioServicio;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import m.pojos.Usuario;
 
 /**
  *
@@ -31,18 +34,28 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        List<Usuario> usuarios = UsuarioServicio.getUsuarios();
+        String nombre = request.getParameter("f_nombre");
+        String pasword = request.getParameter("f_contra");
+        String error, notificacion;
+        if (nombre.isEmpty() || pasword.isEmpty()) {
+            error = "ha dejado un campo vacio";
+        } else {
+            Usuario usuarioEncontrado = null;
+            for (Usuario u : usuarios) {
+                if (u.getNombreusuario().equalsIgnoreCase(nombre) && u.getPasword().equals(pasword)) {
+                    usuarioEncontrado = u;
+                }
+            }
+            if (usuarioEncontrado == null) {
+                error = "usuario o contraseña incorrectos";
+                request.setAttribute("msg", error);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            } else {
+                request.getSession().setAttribute(nombre, usuarioEncontrado);
+                request.getSession().setMaxInactiveInterval(99999);
+                //response.sendRedirect("../sist/busqueda.jsp");
+            }
         }
     }
 
@@ -73,7 +86,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
+
     }
 
     /**

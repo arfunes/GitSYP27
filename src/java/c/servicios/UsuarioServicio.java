@@ -17,7 +17,7 @@ import org.hibernate.SessionFactory;
  */
 public class UsuarioServicio {
 
-    public static List<Usuario> getUsuario() {
+    public static List<Usuario> getUsuarios() {
         SessionFactory sf = HUtil.getSessionFactory();
         Session ses = sf.openSession();
         return ses.createCriteria(Usuario.class).list();

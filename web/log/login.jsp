@@ -18,48 +18,49 @@
     </head>
     <body>
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-          <div class="a-header mdl-layout__header mdl-layout__header--waterfall">
-            <div class="mdl-layout__header-row">
-                <span class="a-title mdl-layout-title">
-                  <img class="a-logo-image" src="../image/logo.jpg">
-                </span>
-          
-                <div class="a-header-spacer mdl-layout-spacer"></div>
+            <div class="a-header mdl-layout__header mdl-layout__header--waterfall">
+                <div class="mdl-layout__header-row">
+                    <span class="a-title mdl-layout-title">
+                        <img class="a-logo-image" src="../image/logo.jpg">
+                    </span>
 
-                <div class="a-navegador-contenedor">
-                    <nav class="a-navegador mdl-navigation">
+                    <div class="a-header-spacer mdl-layout-spacer"></div>
 
-                        <a class="mdl-navigation__link " href="inicio.jsp">Inicio</a>
-                        <a class="mdl-navigation__link " href="qSomos.jsp">Quienes somos</a>
-                        <a class="mdl-navigation__link " href="inicio.jsp">Salir</a>
-                    </nav>
+                    <div class="a-navegador-contenedor">
+                        <nav class="a-navegador mdl-navigation">
+
+                            <a class="mdl-navigation__link " href="inicio.jsp">Inicio</a>
+                            <a class="mdl-navigation__link " href="qSomos.jsp">Quienes somos</a>
+                            <a class="mdl-navigation__link " href="inicio.jsp">Salir</a>
+                        </nav>
+                    </div>
                 </div>
             </div>
-          </div>
-      <div class="form-formulario">     
-        <form action="loginservlet" method="POST">
-            <table border="0" aling="center">
-                <thead>
-                    <tr>
-                        <th>Usuario:</th>
-                        <th><input type="text" name="f_nombre" value="" /></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Contraseña:</td>
-                        <td><input type="password" name="f_contra" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td class="botn">
-                            <input type="submit" value="Ingresar" />
-                        </td>
-                        <%--<td class="botn"><input type="submit" value="Olvide Contraseña" /></td>--%>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="form-formulario">     
+                <form action="loginservlet" method="POST">
+                    <table border="0" aling="center">
+                        <thead>
+                            <tr>
+                                <th>Usuario:</th>
+                                <th><input type="text" name="f_nombre" value="" /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Contraseña:</td>
+                                <td><input type="password" name="f_contra" value="" required="required"/></td>
+                            </tr>
+                            <tr>
+                                <td class="botn">
+                                    <input type="submit" value="Ingresar"required="required" />
+                                </td>
+                                <%--<td class="botn"><input type="submit" value="Olvide Contraseña" /></td>--%>
+                            </tr>
+                        </tbody>
+                    </table>
 
-        </form> 
-      </div>    
+                </form> 
+                ${requestScope.msg}
+            </div>    
     </body>
 </html>
