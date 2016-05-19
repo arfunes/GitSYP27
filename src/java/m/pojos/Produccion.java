@@ -1,5 +1,5 @@
 package m.pojos;
-// Generated 05-17-2016 04:54:21 AM by Hibernate Tools 4.3.1
+// Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -26,7 +26,7 @@ public class Produccion  implements java.io.Serializable {
      private int idproduccion;
      private Producto producto;
      private double preciodeventapormayor;
-     private double preciodeventapormenor;
+     private Double preciodeventapormenor;
      private String unidaddemedida;
      private int tamanodeproduccion;
      private Set personas = new HashSet(0);
@@ -35,14 +35,13 @@ public class Produccion  implements java.io.Serializable {
     }
 
 	
-    public Produccion(int idproduccion, double preciodeventapormayor, double preciodeventapormenor, String unidaddemedida, int tamanodeproduccion) {
+    public Produccion(int idproduccion, double preciodeventapormayor, String unidaddemedida, int tamanodeproduccion) {
         this.idproduccion = idproduccion;
         this.preciodeventapormayor = preciodeventapormayor;
-        this.preciodeventapormenor = preciodeventapormenor;
         this.unidaddemedida = unidaddemedida;
         this.tamanodeproduccion = tamanodeproduccion;
     }
-    public Produccion(int idproduccion, Producto producto, double preciodeventapormayor, double preciodeventapormenor, String unidaddemedida, int tamanodeproduccion, Set personas) {
+    public Produccion(int idproduccion, Producto producto, double preciodeventapormayor, Double preciodeventapormenor, String unidaddemedida, int tamanodeproduccion, Set personas) {
        this.idproduccion = idproduccion;
        this.producto = producto;
        this.preciodeventapormayor = preciodeventapormayor;
@@ -85,12 +84,12 @@ public class Produccion  implements java.io.Serializable {
     }
 
     
-    @Column(name="preciodeventapormenor", nullable=false, precision=17, scale=17)
-    public double getPreciodeventapormenor() {
+    @Column(name="preciodeventapormenor", precision=17, scale=17)
+    public Double getPreciodeventapormenor() {
         return this.preciodeventapormenor;
     }
     
-    public void setPreciodeventapormenor(double preciodeventapormenor) {
+    public void setPreciodeventapormenor(Double preciodeventapormenor) {
         this.preciodeventapormenor = preciodeventapormenor;
     }
 

@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 05-17-2016 04:54:24 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="m.pojos.Persona" table="persona" schema="public" optimistic-lock="version">
         <id name="idpersona" type="int">
             <column name="idpersona" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="usuario" class="m.pojos.Usuario" fetch="select">
-            <column name="idusuario" />
-        </many-to-one>
         <many-to-one name="zona" class="m.pojos.Zona" fetch="select">
             <column name="idzona" />
         </many-to-one>
@@ -29,6 +26,14 @@
         <property name="lugardeventa" type="java.lang.Integer">
             <column name="lugardeventa" />
         </property>
+        <set name="usuarios" table="gestiona" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersona" not-null="true" />
+            </key>
+            <many-to-many entity-name="m.pojos.Usuario">
+                <column name="idusuario" not-null="true" />
+            </many-to-many>
+        </set>
         <set name="produccions" table="realiza" inverse="false" lazy="true" fetch="select">
             <key>
                 <column name="idpersona" not-null="true" />

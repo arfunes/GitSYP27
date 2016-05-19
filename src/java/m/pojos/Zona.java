@@ -1,5 +1,5 @@
 package m.pojos;
-// Generated 05-17-2016 04:54:21 AM by Hibernate Tools 4.3.1
+// Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -52,7 +52,7 @@ public class Zona  implements java.io.Serializable {
     }
 
     
-    @Column(name="nombrezona", nullable=false, length=254)
+    @Column(name="nombrezona", nullable=false, length=50)
     public String getNombrezona() {
         return this.nombrezona;
     }

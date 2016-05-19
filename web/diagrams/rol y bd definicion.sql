@@ -1,0 +1,4 @@
+﻿CREATE ROLE cfAdministrador LOGIN PASSWORD 'P4$w0rd' VALID UNTIL 'infinity';
+CREATE DATABASE cfSuchitoto WITH OWNER cfAdministrador ENCODING = 'UTF8';
+REVOKE CONNECT ON DATABASE cfSuchitoto FROM PUBLIC;
+ALTER ROLE cfAdministrador NOINHERIT;

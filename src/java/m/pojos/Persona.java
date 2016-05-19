@@ -1,5 +1,5 @@
 package m.pojos;
-// Generated 05-17-2016 04:54:21 AM by Hibernate Tools 4.3.1
+// Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -26,13 +26,13 @@ public class Persona  implements java.io.Serializable {
 
 
      private int idpersona;
-     private Usuario usuario;
      private Zona zona;
      private String nombre;
      private int edad;
      private Boolean sexo;
      private Double ingresosanuales;
      private Integer lugardeventa;
+     private Set usuarios = new HashSet(0);
      private Set produccions = new HashSet(0);
      private Set dificultadeses = new HashSet(0);
 
@@ -45,15 +45,15 @@ public class Persona  implements java.io.Serializable {
         this.nombre = nombre;
         this.edad = edad;
     }
-    public Persona(int idpersona, Usuario usuario, Zona zona, String nombre, int edad, Boolean sexo, Double ingresosanuales, Integer lugardeventa, Set produccions, Set dificultadeses) {
+    public Persona(int idpersona, Zona zona, String nombre, int edad, Boolean sexo, Double ingresosanuales, Integer lugardeventa, Set usuarios, Set produccions, Set dificultadeses) {
        this.idpersona = idpersona;
-       this.usuario = usuario;
        this.zona = zona;
        this.nombre = nombre;
        this.edad = edad;
        this.sexo = sexo;
        this.ingresosanuales = ingresosanuales;
        this.lugardeventa = lugardeventa;
+       this.usuarios = usuarios;
        this.produccions = produccions;
        this.dificultadeses = dificultadeses;
     }
@@ -68,16 +68,6 @@ public class Persona  implements java.io.Serializable {
     
     public void setIdpersona(int idpersona) {
         this.idpersona = idpersona;
-    }
-
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="idusuario")
-    public Usuario getUsuario() {
-        return this.usuario;
-    }
-    
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -138,6 +128,15 @@ public class Persona  implements java.io.Serializable {
     
     public void setLugardeventa(Integer lugardeventa) {
         this.lugardeventa = lugardeventa;
+    }
+
+@ManyToMany(fetch=FetchType.LAZY, mappedBy="personas")
+    public Set getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Set usuarios) {
+        this.usuarios = usuarios;
     }
 
 @ManyToMany(fetch=FetchType.LAZY)

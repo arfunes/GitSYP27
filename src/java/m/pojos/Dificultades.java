@@ -1,5 +1,5 @@
 package m.pojos;
-// Generated 05-17-2016 04:54:21 AM by Hibernate Tools 4.3.1
+// Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -29,10 +29,8 @@ public class Dificultades  implements java.io.Serializable {
     }
 
 	
-    public Dificultades(int iddificultad, String enproduccion, String enventa) {
+    public Dificultades(int iddificultad) {
         this.iddificultad = iddificultad;
-        this.enproduccion = enproduccion;
-        this.enventa = enventa;
     }
     public Dificultades(int iddificultad, Persona persona, String enproduccion, String enventa) {
        this.iddificultad = iddificultad;
@@ -64,7 +62,7 @@ public class Dificultades  implements java.io.Serializable {
     }
 
     
-    @Column(name="enproduccion", nullable=false, length=254)
+    @Column(name="enproduccion", length=254)
     public String getEnproduccion() {
         return this.enproduccion;
     }
@@ -74,7 +72,7 @@ public class Dificultades  implements java.io.Serializable {
     }
 
     
-    @Column(name="enventa", nullable=false, length=254)
+    @Column(name="enventa", length=254)
     public String getEnventa() {
         return this.enventa;
     }

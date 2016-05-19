@@ -2,12 +2,13 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="cfsuchitoto" match-schema="public"/>
-  <table-filter match-name="zona"/>
-  <table-filter match-name="categoria"/>
   <table-filter match-name="dificultades"/>
-  <table-filter match-name="usuario"/>
   <table-filter match-name="producto"/>
+  <table-filter match-name="usuario"/>
   <table-filter match-name="produccion"/>
   <table-filter match-name="realiza"/>
+  <table-filter match-name="gestiona"/>
+  <table-filter match-name="zona"/>
+  <table-filter match-name="categoria"/>
   <table-filter match-name="persona"/>
 </hibernate-reverse-engineering>

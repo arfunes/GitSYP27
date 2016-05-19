@@ -1,5 +1,5 @@
 package m.pojos;
-// Generated 05-17-2016 04:54:21 AM by Hibernate Tools 4.3.1
+// Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -8,7 +8,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,6 +26,7 @@ public class Usuario  implements java.io.Serializable {
      private int idusuario;
      private String nombreusuario;
      private String pasword;
+     private Boolean privilegio;
      private Set personas = new HashSet(0);
 
     public Usuario() {
@@ -35,10 +38,11 @@ public class Usuario  implements java.io.Serializable {
         this.nombreusuario = nombreusuario;
         this.pasword = pasword;
     }
-    public Usuario(int idusuario, String nombreusuario, String pasword, Set personas) {
+    public Usuario(int idusuario, String nombreusuario, String pasword, Boolean privilegio, Set personas) {
        this.idusuario = idusuario;
        this.nombreusuario = nombreusuario;
        this.pasword = pasword;
+       this.privilegio = privilegio;
        this.personas = personas;
     }
    
@@ -74,7 +78,20 @@ public class Usuario  implements java.io.Serializable {
         this.pasword = pasword;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="usuario")
+    
+    @Column(name="privilegio")
+    public Boolean getPrivilegio() {
+        return this.privilegio;
+    }
+    
+    public void setPrivilegio(Boolean privilegio) {
+        this.privilegio = privilegio;
+    }
+
+@ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(name="gestiona", schema="public", joinColumns = { 
+        @JoinColumn(name="idusuario", nullable=false, updatable=false) }, inverseJoinColumns = { 
+        @JoinColumn(name="idpersona", nullable=false, updatable=false) })
     public Set getPersonas() {
         return this.personas;
     }
