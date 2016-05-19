@@ -34,8 +34,10 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         List<Usuario> usuarios = UsuarioServicio.getUsuarios();
-        String nombre = request.getParameter("f_nombre");
-        String pasword = request.getParameter("f_contra");
+        String nombre = request.getParameter("f_nombre"); //parametro necesario en la pagina login.jsp
+        String pasword = request.getParameter("f_contra"); //parametro necesario en la pagina login.jsp
+        
+        
         String error, notificacion;
         if (nombre.isEmpty() || pasword.isEmpty()) {
             error = "ha dejado un campo vacio";

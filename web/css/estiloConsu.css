@@ -1,0 +1,45 @@
+.body{
+    background:white;
+}
+
+div.tabla table{
+    margin:100px auto;
+    text-align:center;
+    border:3px solid black;
+}
+.formato-tabla{
+    border:3px solid black;
+    color: goldenrod;
+}
+.a-navegador .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+}
+.a-navegador .mdl-navigation__link:hover {
+    border-bottom: 4px solid white;
+}
+.tabla{
+    padding-right:1200px ;
+}
+
+.a-logo-image {
+  height: 60px;
+  width: 60px;
+}
+
+.form-formulario{
+    text-align:center;
+    padding-top: 300px;
+    padding-left: 800px;
+}
+
+.botn{
+    color:blue;
+    padding-top: 50px;
+}
+
+
+
