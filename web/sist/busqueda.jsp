@@ -1,9 +1,3 @@
-<%-- 
-    Document   : busqueda
-    Created on : 05-18-2016, 09:06:46 AM
-    Author     :Luis Aquino
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -39,7 +33,7 @@
             <form method="POST" action="BusquedaServlet.java">
                 
                 
-                <p><label>Ingrese la busqueda <input type="text" id="valorBusqueda" name="cadenaBusqueda" maxlength="80"></label></p>
+                <p><label>Ingrese la busqueda <input type="text" id="valorBusqueda" name="cadenaBusqueda" maxlength="80"><input type="submit" value="ir"></label></p>
                 
                     
                 
@@ -51,6 +45,7 @@
                     </fieldset>                
                 </div>
             </form>
+            
     
     
      
