@@ -1,0 +1,176 @@
+body{
+    background:darkblue;
+    
+}
+
+/*LOGO DE ALCALDIA*/
+.suchilogo{
+    height:300px;
+    width:177px;
+    background:url("../imagenes/logosuchi.jpg");
+    background-size: 177px 300px;
+    background-repeat: no-repeat;
+    margin:auto;
+}
+.formato-tabla{
+    border:3px solid green;
+}
+.slogan-font{
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    line-height: 2;
+    color:goldenrod;
+    font-weight: 500;
+}
+.slogan{
+    font-size: 40px;
+    padding-top: 0px;
+    clear:both;
+}
+.sub-slogan{
+    font-size: 20px;
+    padding-top: 35px;
+}
+.cabecera{
+    text-align: center;
+    background:white;
+}
+
+.radiosBtn{
+    text-align: left; 
+}
+
+.a-navegador .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+}
+.a-navegador .mdl-navigation__link:hover {
+    border-bottom: 4px solid white;
+}
+
+/*FOOTER*/
+.form-pie{
+    padding-top: 0px;
+    text-align: right;
+}  
+.imagen-twitter{
+    padding-right:20px;
+    height: 50px;
+    width: 50px;
+    background: url("../imagenes/twitter.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    
+}
+.imagen-fb{
+    padding-right:20px;
+    height: 50px;
+    width: 50px;
+    background: url("../imagenes/face.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    
+}
+.text-footer{
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    line-height: 2;
+    color:white;
+    font-weight: 400;
+}
+
+/*GALERIA DE IMAGENES*/
+
+.galeria{
+    height: 400px ;
+    width: 400px ;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top:10px;
+    animation-name: gal;
+    -webkit-animation-name: gal;
+    -o-animation-name: gal;
+    -moz-animation-name: gal;
+    animation-duration: 6s;
+    -webkit-animation-duration: 6s;
+    -o-animation-duration: 6s;
+    -moz-animation-duration: 6s;
+    animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+
+@keyframes gal{
+    0%{background:url("../imagenes/calle.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    25%{background:url("../imagenes/casitas.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    50%{background:url("../imagenes/suchiMas.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    75%{background:url("../imagenes/iglenoche.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    100%{background:url("../imagenes/feminista.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+}
+@-moz-keyframes gal{
+    0%{background:url("../imagenes/calle.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    25%{background:url("../imagenes/casitas.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    50%{background:url("../imagenes/suchiMas.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    75%{background:url("../imagenes/iglenoche.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    100%{background:url("../imagenes/rosa.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+}
+@-webkit-keyframes gal{
+    0%{background:url("../imagenes/calle.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    25%{background:url("../imagenes/casitas.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    50%{background:url("../imagenes/suchiMas.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    75%{background:url("../imagenes/iglenoche.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+    100%{background:url("../imagenes/feminista.jpg");
+        background-size: 400px 400px;
+        background-repeat: no-repeat;}
+}
+.galerian{
+    height: 400px ;
+    width: 400px ;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top:10px;
+    animation-name: gal;
+    -webkit-animation-name: gal;
+    -o-animation-name: gal;
+    -moz-animation-name: gal;
+    animation-duration: 6s;
+    -webkit-animation-duration: 6s;
+    -o-animation-duration: 6s;
+    -moz-animation-duration: 6s;
+    animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
