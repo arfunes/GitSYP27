@@ -1,9 +1,3 @@
-<%-- 
-    Document   : busqueda
-    Created on : 05-18-2016, 09:06:46 AM
-    Author     :Luis Aquino
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,15 +32,22 @@
                 <h1> Busqueda</h1>
                 <form method="POST" action="BusquedaServlet.java">
 
-                        <fieldset>
-                            <legend>buscar por</legend>
-                            <input type="checkbox" name="tipo1" value="1" />Nombre de productor <br />
-                            <input type="checkbox" name="tipo2" value="2" />Producto<br />
-                            <input type="checkbox" name="tipo3" value="3" />Categoria<br />
-                            <input type="submit" value="Submit now" />
-                        </fieldset>
+
+                    <p><input type="text" id="valorBusqueda" name="cadenaBusqueda" maxlength="80" value="Busqueda" /></p>
+
+
+
+                    <fieldset>
+                        <legend>buscar por</legend>
+                        <input type="checkbox" name="tipo1" value="1" />Nombre de productor <br />
+                        <input type="checkbox" name="tipo2" value="2" />Producto<br />
+                        <input type="checkbox" name="tipo3" value="3" />Categoria<br />
+                        <input type="submit" value="Submit now" />
+                    </fieldset>
+
             </div>
         </form>
+
 
 
 
