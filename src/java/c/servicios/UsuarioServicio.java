@@ -25,8 +25,8 @@ public class UsuarioServicio {
         List<Usuario> list = new ArrayList<Usuario>();
                 list=ses.createCriteria(Usuario.class).list();
         if(list.isEmpty())
-            list.add(new Usuario(0, "def", "def"));return 
-            
+            list.add(new Usuario(0, "def", "def"));
+           return list;
     }
 
 }
