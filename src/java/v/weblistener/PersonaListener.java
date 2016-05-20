@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package c.weblistener;
+package v.weblistener;
 
 import c.servicios.PersonaServicio;
 import c.servicios.UsuarioServicio;
@@ -11,7 +11,6 @@ import java.util.List;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import m.pojos.Persona;
-import m.pojos.Usuario;
 
 /**
  * Web application lifecycle listener.
@@ -25,7 +24,7 @@ public class PersonaListener implements ServletContextListener {
         List<Persona> lista = PersonaServicio.getPersona();
         
         //dejando la lista de usuarios en la nube
-        sce.getServletContext().setAttribute("personas", lista);
+        sce.getServletContext().setAttribute("productores", lista);
     }
 
     @Override
