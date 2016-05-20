@@ -6,6 +6,7 @@
 package c.servicios;
 
 import h.util.HUtil;
+import java.util.ArrayList;
 import java.util.List;
 import m.pojos.Usuario;
 import org.hibernate.Session;
@@ -20,7 +21,12 @@ public class UsuarioServicio {
     public static List<Usuario> getUsuarios() {
         SessionFactory sf = HUtil.getSessionFactory();
         Session ses = sf.openSession();
-        return ses.createCriteria(Usuario.class).list();
+        
+        List<Usuario> list = new ArrayList<Usuario>();
+                list=ses.createCriteria(Usuario.class).list();
+        if(list.isEmpty())
+            list.add(new Usuario(0, "def", "def"));return 
+            
     }
 
 }
