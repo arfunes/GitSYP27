@@ -7,6 +7,7 @@ package v.servlet;
 
 import c.servicios.UsuarioServicio;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,36 +34,29 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Usuario> usuarios = UsuarioServicio.getUsuarios();
+
         String nombre = request.getParameter("f_nombre"); //parametro necesario en la pagina login.jsp
         String pasword = request.getParameter("f_contra"); //parametro necesario en la pagina login.jsp
-               
-        String error, notificacion;
-        
-        if(usuarios.isEmpty())
-                
-        if (nombre.isEmpty() || pasword.isEmpty()) {
-            error = "ha dejado un campo vacio";
-        } else {
-            Usuario usuarioEncontrado = null;
-            for (Usuario u : usuarios) {
-                if (u.getNombreusuario().equalsIgnoreCase(nombre) && u.getPasword().equals(pasword)) {
-                    usuarioEncontrado = u;
-                }
-            }
-            if (usuarioEncontrado == null) {
+        String error, msg;
+
+        Usuario usuario = UsuarioServicio.isUser(nombre, pasword);
+        if (usuario == null) {
+            if (nombre.isEmpty() || pasword.isEmpty()) {
+                error = "ha dejado un campo vacio";
+            } else {
                 error = "usuario o contraseña incorrectos";
                 request.setAttribute("msg", error);
                 request.getRequestDispatcher("login.jsp").forward(request, response);
-            } else {
-                request.getSession().setAttribute(nombre, usuarioEncontrado);
-                request.getSession().setMaxInactiveInterval(99999);
-                //response.sendRedirect("../sist/busqueda.jsp");
             }
+        } else {
+            request.getSession().setAttribute(nombre, usuario);
+            request.getSession().setMaxInactiveInterval(99999);
+            response.sendRedirect("../sist/busqueda.jsp");
         }
+        
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -88,7 +82,26 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        /*String nombre = request.getParameter("f_nombre"); //parametro necesario en la pagina login.jsp
+        String pasword = request.getParameter("f_contra"); //parametro necesario en la pagina login.jsp
+        String error, msg;
+
+        Usuario usuario = UsuarioServicio.isUser(nombre, pasword);
+        if (usuario == null) {
+            if (nombre.isEmpty() || pasword.isEmpty()) {
+                error = "ha dejado un campo vacio";
+            } else {
+                error = "usuario o contraseña incorrectos";
+                request.setAttribute("msg", error);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+        } else {
+            request.getSession().setAttribute(nombre, usuario);
+            request.getSession().setMaxInactiveInterval(9999999);
+            response.sendRedirect("../web/sist/productores.jsp");
+        }
+        //processRequest(request, response);*/
 
     }
 

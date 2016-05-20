@@ -29,30 +29,30 @@
                     <div class="a-navegador-contenedor">
                         <nav class="a-navegador mdl-navigation">
 
-                            <a class="mdl-navigation__link " href="inicio.html">Inicio</a>
+                            <a class="mdl-navigation__link " href="../index.html">Inicio</a>
                             <a class="mdl-navigation__link " href="qSomos.jsp">Quienes somos</a>
-                            <a class="mdl-navigation__link " href="inicio.html">Salir</a>
+                            <a class="mdl-navigation__link " href="logout.jsp" ><input type="submit" value="salir" /></a>
                         </nav>
                     </div>
                 </div>
             </div>
             <div class="form-formulario">     
-                <form action="loginservlet" method="POST">
-                    <table border="0" aling="center">
+                <form name="f_datos" action="../loginservlet" method="POST" >
+                    <table border="0" aling="left">
                         <thead>
                             <tr>
                                 <th>Usuario:</th>
-                                <th><input type="text" name="f_nombre" value="" /></th>
+                                <th><input type="text" name="f_nombre"  /></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Contraseña:</td>
-                                <td><input type="password" name="f_contra" value="" required="required"/></td>
+                                <td><input type="password" name="f_contra" required="required"/></td>
                             </tr>
                             <tr>
                                 <td class="botn">
-                                    <input type="submit" value="Ingresar"required="required" />
+                                    <input type="submit" value="Ingresar"required="required" name="ingresar" />
                                 </td>
                                 <%--<td class="botn"><input type="submit" value="Olvide Contraseña" /></td>--%>
                             </tr>

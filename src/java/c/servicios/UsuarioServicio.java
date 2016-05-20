@@ -18,15 +18,26 @@ import org.hibernate.SessionFactory;
  */
 public class UsuarioServicio {
 
-    public static List<Usuario> getUsuarios() {
+    public static Usuario isUser(String nombre, String pasword) {
         SessionFactory sf = HUtil.getSessionFactory();
         Session ses = sf.openSession();
-        
-        List<Usuario> list = new ArrayList<Usuario>();
-                list=ses.createCriteria(Usuario.class).list();
-        if(list.isEmpty())
-            list.add(new Usuario(0, "def", "def"));
-           return list;
-    }
 
+        Usuario uV;
+
+        List<Usuario> list = new ArrayList<Usuario>();
+        list = ses.createCriteria(Usuario.class).list();
+        if (list.isEmpty()) {
+            list.add(new Usuario(0, "def", "def",true, null));
+        }
+        for (Usuario us : list) {
+            if (us.getNombreusuario().equalsIgnoreCase(nombre) && us.getPasword().equalsIgnoreCase(pasword)) {
+                return us;
+            }
+        }
+
+        return null;
+    }
+    public Usuario setUsuario (int idusuario, String nombreusuario, String pasword, Boolean privilegio, List personas){
+        return null;
+    }
 }

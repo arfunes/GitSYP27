@@ -1,18 +1,15 @@
+<%-- 
+    Document   : logout
+    Created on : 05-20-2016, 03:32:07 AM
+    Author     : Ar Montalvo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>Concertacion de mujeres de Suchitoto</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <script type="text/javascript">
-
-        </script>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Saliendo</title>
         <link rel="stylesheet" href="css/estiloConsu.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -26,9 +23,7 @@ and open the template in the editor.
 
                 <div class="a-navegador-contenedor">
                     <nav class="a-navegador mdl-navigation">
-                        <a class=" mdl-navigation__link " href="log/productores.jsp">Consultar Datos</a>
-                        <a class=" mdl-navigation__link " href="log/login.jsp">Ingresar</a>
-                        <a class=" mdl-navigation__link " href="log/qSomos.html">Quienes somos</a>
+                        <a class=" mdl-navigation__link " href=""../index.html"">Inicio</a>
                     </nav>
                 </div>
             </div>
@@ -49,15 +44,6 @@ and open the template in the editor.
 
                 </div>   
             </div>
-
-            <footer>
-                <div class="form-pie">
-                    <p class="text-footer"> SIGUENOS EN:
-                        <a href="https://www.twitter.com/" target="_blank"><img class="imagen-twitter"></a>
-                        <a href="https://www.facebook.com/" target="_blank"><img class="imagen-fb" ></a>
-                    </p>
-                </div>
-            </footer>
-        </div>
+</div>
     </body>
 </html>
