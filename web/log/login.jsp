@@ -29,9 +29,9 @@
                     <div class="a-navegador-contenedor">
                         <nav class="a-navegador mdl-navigation">
 
-                            <a class="mdl-navigation__link " href="inicio.jsp">Inicio</a>
+                            <a class="mdl-navigation__link " href="inicio.html">Inicio</a>
                             <a class="mdl-navigation__link " href="qSomos.jsp">Quienes somos</a>
-                            <a class="mdl-navigation__link " href="inicio.jsp">Salir</a>
+                            <a class="mdl-navigation__link " href="inicio.html">Salir</a>
                         </nav>
                     </div>
                 </div>
