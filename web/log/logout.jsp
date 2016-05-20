@@ -23,11 +23,14 @@
 
                 <div class="a-navegador-contenedor">
                     <nav class="a-navegador mdl-navigation">
-                        <a class=" mdl-navigation__link " href=""../index.html"">Inicio</a>
+                        <a class=" mdl-navigation__link " href="../index.html">Inicio</a>
                     </nav>
                 </div>
             </div>
-
+            <form class="logoutservlet">
+                
+                <input name="aceptar" type="submit" value="Aceptar"/>
+            </form>
 
 
             <div class="cabecera">

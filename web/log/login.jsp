@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
-
     </head>
     <body>
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -23,22 +22,19 @@
                     <span class="a-title mdl-layout-title">
                         <img class="a-logo-image" src="../image/logo.jpg">
                     </span>
-
                     <div class="a-header-spacer mdl-layout-spacer"></div>
-
                     <div class="a-navegador-contenedor">
                         <nav class="a-navegador mdl-navigation">
-
                             <a class="mdl-navigation__link " href="../index.html">Inicio</a>
                             <a class="mdl-navigation__link " href="qSomos.jsp">Quienes somos</a>
-                            <a class="mdl-navigation__link " href="logout.jsp" ><input type="submit" value="salir" /></a>
+                            <a class="mdl-navigation__link " href="logout.jsp" >Salir</a>
                         </nav>
                     </div>
                 </div>
             </div>
             <div class="form-formulario">     
                 <form name="f_datos" action="../loginservlet" method="POST" >
-                    <table border="0" aling="left">
+                    <table border="0" aling="center">
                         <thead>
                             <tr>
                                 <th>Usuario:</th>
@@ -58,7 +54,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </form> 
                 ${requestScope.msg}
             </div>    

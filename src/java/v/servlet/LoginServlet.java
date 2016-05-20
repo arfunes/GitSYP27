@@ -43,6 +43,8 @@ public class LoginServlet extends HttpServlet {
         if (usuario == null) {
             if (nombre.isEmpty() || pasword.isEmpty()) {
                 error = "ha dejado un campo vacio";
+                request.setAttribute("msg", error);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             } else {
                 error = "usuario o contraseña incorrectos";
                 request.setAttribute("msg", error);
@@ -53,7 +55,6 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setMaxInactiveInterval(99999);
             response.sendRedirect("../sist/busqueda.jsp");
         }
-        
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -102,7 +103,6 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("../web/sist/productores.jsp");
         }
         //processRequest(request, response);*/
-
     }
 
     /**
