@@ -29,24 +29,19 @@
 
             <div class="cabecera">
 
-                <h1> Busqueda</h1>
                 <form method="POST" action="BusquedaServlet.java">
-
-
-                    <p><input type="text" id="valorBusqueda" name="cadenaBusqueda" maxlength="80" value="Busqueda" /></p>
-
-
-
                     <fieldset>
-                        <legend>buscar por</legend>
-                        <input type="checkbox" name="tipo1" value="1" />Nombre de productor <br />
-                        <input type="checkbox" name="tipo2" value="2" />Producto<br />
-                        <input type="checkbox" name="tipo3" value="3" />Categoria<br />
-                        <input type="submit" value="Submit now" />
+                        <legend>
+                            <input type="text" id="valorBusqueda" name="cadenaBusqueda" maxlength="100" required="required"/>
+                            <input type="submit" value="Buscar"  />
+                        </legend>
+                        <input type="checkbox" name="ckb" value="1" />Categoria
+                        <input type="checkbox" name="ckb" value="2" />Producto
+                        <input type="checkbox" name="ckb" value="3" />Zona
                     </fieldset>
-
+                </form>
             </div>
-        </form>
+        
 
 
 
