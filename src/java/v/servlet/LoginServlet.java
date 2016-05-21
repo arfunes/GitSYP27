@@ -2,6 +2,9 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+
+   editado por --
+   comtadpr de edicion 1
  */
 package v.servlet;
 
@@ -46,14 +49,14 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("msg", error);
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             } else {
-                error = "usuario o contraseña incorrectos";
-                request.setAttribute("msg", error);
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getSession().setAttribute(nombre, usuario);
+                request.getSession().setMaxInactiveInterval(99999);
+                response.sendRedirect("productores.jsp");
             }
         } else {
             request.getSession().setAttribute(nombre, usuario);
             request.getSession().setMaxInactiveInterval(99999);
-            response.sendRedirect("../sist/busqueda.jsp");
+            response.sendRedirect("../sist/productores.jsp");
         }
     }
 
