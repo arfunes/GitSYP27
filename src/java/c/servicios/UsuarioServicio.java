@@ -5,12 +5,13 @@
  */
 package c.servicios;
 
-import h.util.HUtil;
+//Hibernate
 import java.util.ArrayList;
 import java.util.List;
 import m.pojos.Usuario;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+//SQL
 
 /**
  *
@@ -18,26 +19,38 @@ import org.hibernate.SessionFactory;
  */
 public class UsuarioServicio {
 
-    public static Usuario isUser(String nombre, String pasword) {
-        SessionFactory sf = HUtil.getSessionFactory();
-        Session ses = sf.openSession();
-
-        Usuario uV;
-
+     static SessionFactory sf = HUtil.getSessionFactory();
+     static Session ses = sf.openSession();
+static void closeSession(){
+        ses.close();
+    }
+    public static List<Usuario> getUsuarios() {
         List<Usuario> list = new ArrayList<Usuario>();
         list = ses.createCriteria(Usuario.class).list();
+        return list;
+    }
+
+    public static Usuario isUser(Usuario usuario) {
+        List<Usuario> list = getUsuarios();
+        Usuario uV = null;
         if (list.isEmpty()) {
-            list.add(new Usuario(0, "def", "def",true, null));
+            list.add(new Usuario(0, "def", "def", true, null));
         }
         for (Usuario us : list) {
-            if (us.getNombreusuario().equalsIgnoreCase(nombre) && us.getPasword().equalsIgnoreCase(pasword)) {
-                return us;
+            if (usuario.getNombreusuario().equalsIgnoreCase(us.getNombreusuario())) {
+                if (us.getPasword().equals(usuario.getPasword())) {
+                    return us;
+                }
             }
         }
-
-        return null;
+        return uV;
     }
-    public Usuario setUsuario (int idusuario, String nombreusuario, String pasword, Boolean privilegio, List personas){
+
+    /*    public Usuario setUsuario (int idusuario, String nombreusuario, String pasword, Boolean privilegio, List personas){
+    return null;
+    }*/
+    public static List<Usuario> getUsuariosSql() {
+
         return null;
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-22-2016 04:37:33 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="m.pojos.Usuario" table="usuario" schema="public" optimistic-lock="version">
         <id name="idusuario" type="int">

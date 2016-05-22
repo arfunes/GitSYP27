@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-22-2016 04:37:33 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="m.pojos.Persona" table="persona" schema="public" optimistic-lock="version">
         <id name="idpersona" type="int">
@@ -9,7 +9,7 @@
             <generator class="assigned" />
         </id>
         <many-to-one name="zona" class="m.pojos.Zona" fetch="select">
-            <column name="idzona" />
+            <column name="idzona" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">
             <column name="nombre" length="254" not-null="true" />
@@ -34,19 +34,17 @@
                 <column name="idusuario" not-null="true" />
             </many-to-many>
         </set>
-        <set name="produccions" table="realiza" inverse="false" lazy="true" fetch="select">
+        <set name="dificultadeses" table="dificultades" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idpersona" not-null="true" />
             </key>
-            <many-to-many entity-name="m.pojos.Produccion">
-                <column name="idproduccion" not-null="true" />
-            </many-to-many>
-        </set>
-        <set name="dificultadeses" table="dificultades" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="idpersona" />
-            </key>
             <one-to-many class="m.pojos.Dificultades" />
+        </set>
+        <set name="produccions" table="produccion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idpersona" not-null="true" />
+            </key>
+            <one-to-many class="m.pojos.Produccion" />
         </set>
     </class>
 </hibernate-mapping>

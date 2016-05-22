@@ -5,7 +5,7 @@
  */
 package c.servicios;
 
-import h.util.HUtil;
+
 import java.util.List;
 import m.pojos.Zona;
 import org.hibernate.Session;
@@ -15,6 +15,7 @@ import org.hibernate.SessionFactory;
  *
  * @author Ar Montalvo
  */
+//por el momento no usaremos mas que estas dos partes Zona
 public class ZonaServicio {
     public static List<Zona> getZonas() {
         SessionFactory sf = HUtil.getSessionFactory();
@@ -26,4 +27,5 @@ public class ZonaServicio {
         Session ses = sf.openSession();
         return (Zona) ses.createCriteria(Zona.class, "idzona="+idZona+"");
     }
+    
 }

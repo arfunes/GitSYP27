@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import m.pojos.Usuario;
+import c.control.Control;
 
 /**
  *
@@ -41,8 +42,9 @@ public class LoginServlet extends HttpServlet {
         String nombre = request.getParameter("f_nombre"); //parametro necesario en la pagina login.jsp
         String pasword = request.getParameter("f_contra"); //parametro necesario en la pagina login.jsp
         String error, msg;
-
-        Usuario usuario = UsuarioServicio.isUser(nombre, pasword);
+        Control control=new Control();
+        
+        Usuario usuario = control.getUser(nombre, pasword);
         if (usuario == null) {
             if (nombre.isEmpty() || pasword.isEmpty()) {
                 error = "ha dejado un campo vacio";

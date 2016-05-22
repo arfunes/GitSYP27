@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 05-19-2016 02:23:46 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 05-22-2016 04:37:33 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="m.pojos.Dificultades" table="dificultades" schema="public" optimistic-lock="version">
         <id name="iddificultad" type="int">
@@ -9,7 +9,7 @@
             <generator class="assigned" />
         </id>
         <many-to-one name="persona" class="m.pojos.Persona" fetch="select">
-            <column name="idpersona" />
+            <column name="idpersona" not-null="true" />
         </many-to-one>
         <property name="enproduccion" type="string">
             <column name="enproduccion" length="254" />
